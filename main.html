@@ -6,7 +6,7 @@
 	<title></title>
 <!--Bootstrap-->
 	<link rel="stylesheet" type="text/css" href="css/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/js/bootstrap.bundle.min.js">
+    <script src="css/js/bootstrap.bundle.min.js"></script>
 <!--Css-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -15,7 +15,7 @@
 
 	<nav class="navbar navbar-expand-lg fixed-top navbarScroll">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
+            <a class="navbar-brand fw-bold" href="#">My <span style="color: #F5B041 ;">Portfolio</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,6 +42,9 @@
         </div>
         <script src="Script.js"></script>
     </nav>
+
+
+
 <!-- main banner -->
 <section class="bgimage" id="home">
     <div class="container-fluid">
@@ -63,7 +66,7 @@
 
     </div>
     
-    <script>
+   <script>
     // Text content to be animated
     const titleText = "Hi, it's me Bry";
     const descText = "I am a Full Stack WebDevloper";
@@ -75,6 +78,13 @@
 
         function type() {
             if (charIndex < text.length) {
+                if (charIndex >= 9 && charIndex <= 17) {
+                    // Check if the current character index corresponds to "it's me Bry"
+                    element.style.color = "#F5B041"; // Set the color to #F5B041
+                } else {
+                    element.style.color = "white"; // Set the default color to white for other characters
+                }
+
                 element.textContent += text.charAt(charIndex);
                 charIndex++;
                 setTimeout(type, delay);
@@ -95,6 +105,7 @@
         }, titleText.length * typingDelay + 1000); // 1000ms delay after title animation is complete
     };
 </script>
+
  
 </section>
 
